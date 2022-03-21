@@ -1,7 +1,7 @@
 # CMPS 2200  Recitation 05
 
-**Name (Team Member 1):**_________________________  
-**Name (Team Member 2):**_________________________
+**Name (Team Member 1):**Jamie Hartman   
+**Name (Team Member 2):**Charles Tyndal  
 
 
 In this lab, we'll continue working with sequence functions and sorting.

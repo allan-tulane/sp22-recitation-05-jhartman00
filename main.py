@@ -29,8 +29,15 @@ def count_values(a, k):
     >>> count_values([2,2,1,0,1,0,1,3], 3)
     [2, 3, 2, 1]
     """
-    ###TODO
-    pass
+    dict = {}
+    for i in a:
+        if i not in dict:
+            dict[i] = 1
+        elif i in dict:
+            dict[i] += 1
+    out = list(dict.values())
+    return out
+    
 
 def test_count_values():
     assert count_values([2,2,1,0,1,0,1,3], 3) == [2, 3, 2, 1]
@@ -46,11 +53,24 @@ def get_positions(counts):
     >>> get_positions([2, 3, 2, 1])
     [0, 2, 5, 7]    
     """
-    ###TODO
-    pass
+    ###working without scan
+    # out = []
+    # val = 0
+    # for i in counts:
+    #     out.append(val)
+    #     val = val + i
+    # return out
+
+    ##Test with scan
+    res = scan(plus, [], counts)
+    res = [0]+res[0][0:-1]
+    return res
     
 def test_get_positions():
     assert get_positions([2, 3, 2, 1]) == [0, 2, 5, 7]
+
+
+
     
 def construct_output(a, positions):
     """
@@ -66,8 +86,13 @@ def construct_output(a, positions):
     >>> construct_output([2,2,1,0,1,0,1,3], [0, 2, 5, 7])
     [0,0,1,1,1,2,2,3]    
     """
-    ###TODO
-    pass
+    counts = [0]*len(positions)
+    out = [0]*len(a)
+    for i in a:
+        pos = positions[i]+counts[i]
+        out[pos] = i
+        counts[i]+=1
+    return out
 
 def test_construct_output():
     assert construct_output([2,2,1,0,1,0,1,3], [0, 2, 5, 7]) == [0,0,1,1,1,2,2,3]
@@ -139,3 +164,15 @@ def iterate(f, x, a):
     
 def flatten(sequences):
     return iterate(plus, [], sequences)
+
+
+if __name__ == "__main__":
+    print("Testing count values")
+    test_count_values()
+    print("Count values passed")
+    print("Testing get positions")
+    test_get_positions()
+    print("Get positions passed")
+    print("Testing construct output")
+    test_construct_output()
+    print("Construct output passed")
