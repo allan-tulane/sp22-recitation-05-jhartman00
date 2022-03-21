@@ -115,7 +115,7 @@ def test_count_values_mr():
 
 
 def count_map(value):
-    return [value, 1]
+    return [(value, 1)]
 
 
 def count_reduce(group):
@@ -172,8 +172,7 @@ def iterate(f, x, a):
         return iterate(f, f(x, a[0]), a[1:])
 
 
-# def flatten(sequences):
-#     return iterate(plus, [], sequences)
-
 def flatten(sequences):
-    return sequences
+    return iterate(plus, [], sequences)
+
+
