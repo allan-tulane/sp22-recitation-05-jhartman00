@@ -177,18 +177,3 @@ def iterate(f, x, a):
 
 def flatten(sequences):
     return sequences
-
-
-if __name__ == "__main__":
-    print("Testing count values")
-    test_count_values()
-    print("Count values passed")
-    print("Testing get positions")
-    test_get_positions()
-    print("Get positions passed")
-    print("Testing construct output")
-    test_construct_output()
-    print("Construct output passed")
-    print("Testing count values mr")
-    test_count_values_mr()
-    print("Count values mr passed")
