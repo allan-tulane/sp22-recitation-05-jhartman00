@@ -17,4 +17,3 @@ def test_construct_output():
 # 1
 def test_count_values_mr():
     assert count_values_mr([2,2,1,0,1,0,1,3], 3) == [2, 3, 2, 1]
-
